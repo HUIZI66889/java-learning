@@ -1,0 +1,41 @@
+会员购物时，不同积分享受的折扣不同，规则如下：
+x>8000,6折
+4000<=x<8000,7折
+2000<=x<4000,8折
+x<2000,9折
+计算会员购物时获得的折扣，效果如下：
+请输入会员积分：4500
+该会员享受的折扣是：0.7
+
+import java.util.Scanner;
+public class HelloWorld{
+	public static void main(String[] atgs){
+		//1.给出积分
+		Scanner sc = new Scanner(System.in);
+		System.out.print("请输入会员积分：");
+		
+		//判断积分是不是整形
+		if(sc.hasNextInt() == true){
+			int score = sc.nextInt();
+			//判断是不是正数
+			if(score>0){
+				//2.根据积分判断折扣：
+		        String count = "";
+		        if(score>=8000){
+			        count = "0.6";
+		        }else if(score>=4000){
+		            count = "0.7";
+		        }else if(score>=2000){
+			        count = "0.8";
+	            }else{
+			        count = "0.9";
+		        }
+		        System.out.println("该会员享受的折扣是："+count);
+			}else{
+				System.out.println("请输入大于0的数");
+				}
+		}else{
+			System.out.println("你录入的数据不是整形！");
+		}	
+    }
+}
