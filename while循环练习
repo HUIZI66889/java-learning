@@ -1,1 +1,33 @@
+public class HelloWorld{
+	public static void main(String[] atgs){
+		/*
+		【1】1+2+3+4+5...+100
+		int i = 1;
+		int sum = 0;
+		while(i<=100){
+			sum += i;
+			i++;
+		}
+		System.out.println("sum = "+sum);//5050
+		【2】2+4+6+8+...+998+1000
+		 int i = 1;
+		 int k = 0;
+		 int sum =0;
+		 while(k<1000){
+			 k = 2*i;
+			 sum += k;
+			 i++;
+		 }
+		 System.out.println("sum = "+sum);//250500
+		【3】5+10+15+20+...+100
+		int i = 5;
+		int sum = 0;
+		while(i<=100){
+			sum += i;
+			i = i+5;
+		}
+		System.out.println("sum = "+sum);//1050
+		*/
 
+    }	
+}
