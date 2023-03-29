@@ -1,0 +1,12 @@
+import java.util.Scanner;
+public class HelloWorld{
+	public static void main(String[] args){
+         Scanner sc = new Scanner(System.in);   
+	     int youGuessNum = sc.nextInt();
+		 guessNum(youGuessNum);
+		 }
+	public static void guessNum(int yournum){
+			 int myNum = (int)(Math.random()*6)+1;
+			 System.out.println(yournum==myNum?"猜对了":"猜错了");
+	}	
+}	
