@@ -1,0 +1,46 @@
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.Scanner;
+
+public class test {
+    public static void main(String[] args) {
+
+        Calendar cal = new GregorianCalendar();
+        //获取用户输入部分
+        Scanner sc = new Scanner(System.in);
+        System.out.println("请输入如下格式的日期：2010-1-1");
+        String input = sc.next(); //用户输入的信息存在input中
+
+        //按照用户输入内容转成Calendar
+        //String--->sql.Date
+        java.sql.Date date = java.sql.Date.valueOf(input);
+        //sql.Date--->Calendar
+        cal.setTime(date);
+
+        //打印标题行
+        System.out.println("日\t一\t二\t三\t四\t五\t六");
+        int maxDate = cal.getActualMaximum(cal.DATE);
+        int nowDay = cal.get(Calendar.DATE);
+        //将日期调为本月的1号
+        cal.set(Calendar.DATE,1);
+        int num = cal.get(Calendar.DAY_OF_WEEK);
+        int day = num - 1;
+        int count = 0;
+        for (int i = 0; i < day ; i++) {
+            System.out.print("\t");
+        }
+        count += day;
+        for (int i = 1; i <=maxDate ; i++) {
+            if(i == nowDay){
+                System.out.print(i +"*"+"\t");
+            }else{
+                System.out.print(i+"\t");
+            }
+            count++;
+            while(count % 7 == 0){
+                System.out.println();
+                break;
+            }
+        }
+    }
+}
